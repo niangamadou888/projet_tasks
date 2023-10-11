@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="login-link">
+            <div class="logo">
+                <i class='bx bx-pencil' ></i>
+                <span class="text">Logo name</span>
+            </div>
+            <p class="side-big-heading">Already a member ?</p>
+            <p class="primary-bg-text">To keep track on your dashboard please login with your personal info</p>
+            <a href="login.html" class="loginbtn">Login</a>
+        </div>
+        <form action="" class="signup-form-container">
+            <p class="big-heading">Create Account</p>
+            <div class="progress-bar">
+                <div class="stage">
+                    <p class="tool-tip">Your Profile</p>
+                    <p class="stageno stageno-1">1</p>
+                </div>
+                <div class="stage">
+                    <p class="tool-tip">Business Information</p>
+                    <p class="stageno stageno-2">2</p>
+                </div>
+                <div class="stage">
+                    <p class="tool-tip">Additional Users</p>
+                    <p class="stageno stageno-3">3</p>
+                </div>
+            </div>
+            <div class="signup-form-content">
+                <div class="stage1-content">
+                    <div class="button-container">
+                        <div class="text-fields fname">
+                            <label for="fname"><i class='bx bx-user' ></i></label>
+                            <input type="text" name="fname" id="fname" placeholder="Input Your First Name">
+                        </div>
+                        <div class="text-fields lname">
+                            <label for="lname"><i class='bx bx-user' ></i></label>
+                            <input type="text" name="lname" id="lname" placeholder="Input Your Last Name">
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <div class="text-fields email">
+                            <label for="email"><i class='bx bx-user' ></i></label>
+                            <input type="text" name="email" id="email" placeholder="Input Your Email">
+                        </div>
+                        <div class="text-fields phone">
+                            <label for="phonenumb"><i class='bx bx-user' ></i></label>
+                            <input type="text" name="phonenumb" id="phonenumb" placeholder="Input Your Phone Number">
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <div class="text-fields password">
+                            <label for="password"><i class='bx bx-user' ></i></label>
+                            <input type="text" name="password" id="password" placeholder="Create Password">
+                        </div>
+                        <div class="text-fields confirmpassword">
+                            <label for="confpassword"><i class='bx bx-user' ></i></label>
+                            <input type="text" name="confpassword" id="confpassword" placeholder="Confirm Your Password">
+                        </div>
+                    </div>
+                    <div class="pagination-btns">
+                        <input type="button" value="Next Step" class="nextPage stagebtn1b" onclick="stage1to2()">
+                    </div>
+                </div>
+               <div class="stage2-content">
+                <div class="button-container">
+                    <div class="text-fields brandName">
+                        <label for="brandType"><i class='bx bx-user' ></i></label>
+                        <input type="text" name="brandType" id="brandName" placeholder="Input Your Brand Name">
+                    </div>
+                    <div class="text-fields brandType">
+                        <label for="brandType"><i class='bx bx-user' ></i></label>
+                        <input type="text" name="brandType" id="brandType" placeholder="Enter Type Of Your Brand">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <div class="text-fields streetAddress">
+                        <label for="streetAddress"><i class='bx bx-user' ></i></label>
+                        <input type="text" name="streetAddress" id="streetAddress" placeholder="Input Your Street Address">
+                    </div>
+                    <div class="text-fields city">
+                        <label for="city"><i class='bx bx-user' ></i></label>
+                        <input type="text" name="city" id="city" placeholder="Input Your City">
+                    </div>
+                </div>
+                <div class="button-container">
+                    <div class="text-fields zipCode">
+                        <label for="zipCode"><i class='bx bx-user' ></i></label>
+                        <input type="text" name="zipCode" id="zipCode" placeholder="Input Zip Code">
+                    </div>
+                    <div class="text-fields taxID">
+                        <label for="taxID"><i class='bx bx-user' ></i></label>
+                        <input type="text" name="taxID" id="taxID" placeholder="Input Tax ID Number">
+                    </div>
+                </div>
+                <div class="pagination-btns">
+                    <input type="button" value="Previous Step" class="previousPage stagebtn2a" onclick="stage2to1()">
+                    <input type="button" value="Next Step" class="nextPage stagebtn2b" onclick="stage2to3()">
+                </div>
+               </div>
+               <div class="stage3-content">
+                <div class="tc-container">
+                    <label for="tc" class="tc">
+                        <input type="checkbox" name="tc" id="tc" required>
+                        By submiting your details, you agree to the <a href="#"> terms and conditions. </a>
+                    </label>
+                </div>
+                <div class="pagination-btns">
+                    <input type="button" value="Previous Step" class="previousPage stagebtn3a" onclick="stage3to2()">
+                    <input type="submit" value="Submit Step" class="nextPage stagebtn3b" onclick="submitForm()">
+                </div>
+               </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    let signupConent = document.querySelector(".signup-form-container"),
+        stagebtn1b = document.querySelector(".stagebtn1b"),
+        stagebtn2a = document.querySelector(".stagebtn2a"),
+        stagebtn2b = document.querySelector(".stagebtn2b"),
+        stagebtn3a = document.querySelector(".stagebtn3a"),
+        stagebtn3b = document.querySelector(".stagebtn3b"),
+        signupContent1 = document.querySelector(".stage1-content"),
+        signupContent2 = document.querySelector(".stage2-content"),
+        signupContent3 = document.querySelector(".stage3-content");
+        
+        signupContent2.style.display = "none"
+        signupContent3.style.display = "none"
+
+        function stage1to2(){
+            signupContent1.style.display = "none"
+            signupContent3.style.display = "none"
+            signupContent2.style.display = "block"
+            document.querySelector(".stageno-1").innerText = "✔"
+            document.querySelector(".stageno-1").style.backgroundColor = "#52ec61"
+            document.querySelector(".stageno-1").style.color = "#fff"
+        }
+        function stage2to1(){
+            signupContent1.style.display = "block"
+            signupContent3.style.display = "none"
+            signupContent2.style.display = "none"
+        }
+        function stage2to3(){
+            signupContent1.style.display = "none"
+            signupContent3.style.display = "block"
+            signupContent2.style.display = "none"
+            document.querySelector(".stageno-2").innerText = "✔"
+            document.querySelector(".stageno-2").style.backgroundColor = "#52ec61"
+            document.querySelector(".stageno-2").style.color = "#fff"
+        }
+        function stage3to2(){
+            signupContent1.style.display = "none"
+            signupContent3.style.display = "none"
+            signupContent2.style.display = "block"
+        }
+        function submitForm(){
+            alert("Registration Complete");
+        }
+        // Add an event listener to the form for when it is submitted
+document.querySelector(".signup-form-container").addEventListener("submit", function (event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
+    // Collect data from all stages
+    const formData = {
+        // Stage 1
+        fname: document.getElementById("fname").value,
+        lname: document.getElementById("lname").value,
+        email: document.getElementById("email").value,
+        phonenumb: document.getElementById("phonenumb").value,
+        password: document.getElementById("password").value,
+        confpassword: document.getElementById("confpassword").value,
+
+        // Stage 2
+        brandName: document.getElementById("brandName").value,
+        brandType: document.getElementById("brandType").value,
+        streetAddress: document.getElementById("streetAddress").value,
+        city: document.getElementById("city").value,
+        zipCode: document.getElementById("zipCode").value,
+        taxID: document.getElementById("taxID").value,
+
+        // Stage 3
+        agreeToTerms: document.getElementById("tc").checked,
+    };
+
+    // Log the collected data to the console
+    console.log("Collected Form Data:", formData);
+    signupConent.reset();
+});
+
+
+</script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</html>
